@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% extends "test_l.html" %}
+{% load static %}
+
+ <!--Block content-->
+{% block banner %}
+    <div class="banner">
+        <img src="{% static 'myapp/banner.jpg' %}" style="width:100%">
+        <div class="vertical"></div>
+        <div class="left-top">Explore the <em>world</em></div>
+        <div class="left-middle">through our</div>
+        <div class="left-bottom">exhibitions</div>
+        <img class="banner-logo" src="{% static 'myapp/logo.png' %}" style="width:200px">
+    </div>
+{% endblock %}
+
+{% block content %}
+    <p style="color:rgb(60, 145, 230);text-align:center;font-size:90px; font-weight:bold;">The CHS Museum</p>
+    <h2 style="text-align:right; color:rgb(60, 145, 230);"><em>Open daily 9AM-5PM</em></h2>
+    <hr style="border:rgb(60, 145, 230) dotted 3px; margin-bottom:100px;">
+
+    <h3 style="width:500px;">Here's some you might like...</h3>
+
+    <div class="showcase">
+        <div class="showcase-box">
+            <img src="{% static 'myapp/sa-lamesa-img.jpg' %}" class="showcase-img">
+            <p><a href="http://127.0.0.1:8000/search/?q=Sa+Lamesa">Sa Lamesa</a></p>
+        </div>
+        <div class="showcase-box">
+            <img src="{% static 'myapp/pokemonic-past-img.jpg' %}" class="showcase-img">
+            <p><a href="http://127.0.0.1:8000/search/?q=Pokemonic+Past">Pokemonic Past</a></p>
+        </div>
+        <div class="showcase-box">
+            <img src="{% static 'myapp/the-golden-ratio-img.jpg' %}" class="showcase-img">
+            <p><a href="http://127.0.0.1:8000/search/?q=The+Golden+Ratio">The Golden Ratio</a></p>
+        </div>
+    </div>
+
+    <div class="special">
+        <div class="box">
+            <img src="{% static 'myapp/stardew-valley-img.png' %}" style="max-width:600px; float:left; margin-right:20px;">
+            <p style="padding:10px;">Newest Exhibition:</p>
+            <p style="font-family: 'Times New Roman', Times, serif;font-size:10px; font-size:50px;line-height:50px;">The Secrets of Stardew Valley</p>
+        </div>
+    </div>
+
+    <h2>Support us</h2>
+
+    {% if user.is_authenticated %}
+
+        <p>Thanks for being a member, {{ user.username }}!</p>
+
+    {% else %}
+
+        <a href="http://127.0.0.1:8000/accounts/signups"><p class="page-link">Become a member ></p></a>
+
+    {% endif %}
+
+    <a href="http://127.0.0.1:8000/about"><p class="page-link">About ></p></a>
+
+    <h3 style="width:500px;">See more...</h3>
+
+    <div class="showcase">
+        <div class="showcase-box">
+            <img src="{% static 'myapp/the-miraculous-box-img.jpg' %}" class="showcase-img">
+            <p><a href="http://127.0.0.1:8000/search/?q=The+Miraculous+Box">The Miraculous Box</a></p>
+        </div>
+        <div class="showcase-box">
+            <img src="{% static 'myapp/shakespeare-img.jpg' %}" class="showcase-img">
+            <p><a href="http://127.0.0.1:8000/search/?q=The+Life+of+Shakespeare">The Life of Shakespeare</a></p>
+        </div>
+        <div class="showcase-box">
+            <img src="{% static 'myapp/mister-maker-img.jpg' %}" class="showcase-img">
+            <p><a href="http://127.0.0.1:8000/search/?q=Mister+Maker's+Marvellous+Crafts">Mister Maker's Marvellous Crafts</a></p>
+        </div>
+    </div>
+
+    <div class="special" style="height:200px;">
+        <p>We acknowledge the Burramattagal nation, the traditional custodians of the land on which the CHS Museum stands.</p>
+    </div>
+
+{% endblock %}

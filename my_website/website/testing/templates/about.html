@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends "test_l.html" %}
+{% load static %}
+
+{% block content %}
+
+<h3 style="width:200px;">About us</h3>
+
+<h2>Explore & Educate</h2>
+
+<p style="color:rgb(60, 145, 230);padding:30px;margin:30px;border-bottom:3px solid rgb(60, 145, 230);">
+    <em>The CHS Museum acknowledges the Burramattagal nation, the traditional custodians of the land
+    on which it stands.</em>
+</p>
+
+
+<div class="container" style="justify-content:center;width:90%;display:flex;margin:40px;">
+    <p style="float:left;">The CHS Museum is a small business, run by owners who are passionate about
+        sharing and educating others on the wonders of our world. Our aim is to
+        provide education for all through our unique and intriguing exhibits.
+        <br>
+        <br>
+        But to make our museum more accessible and <em>free</em> for everyone, it
+        would help a lot by becoming a member! You can learn more about that below.
+    </p>
+    <img src="{% static 'myapp/location-img.png' %}" style="float:right;width:50%;">
+</div>
+
+<a href="http://127.0.0.1:8000/accounts/signups"><p class="page-link">Become a member ></p></a>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends "test_l.html" %}
+
+{% block content %}
+<div class="account-container">
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button class="btn" type="submit">LOGOUT</button>
+    </form>
+</div>
+
+{% endblock %}

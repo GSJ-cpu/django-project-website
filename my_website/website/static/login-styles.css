@@ -1,0 +1,24 @@
+@import url(https://fonts.googleapis.com/css?family=Reenie+Beanie);
+
+body {
+    text-align:center;
+    font-family:arial;
+    padding: 10px 10px;
+    font-family: 'Reenie+Beanie';
+}
+
+p, a{ 
+    line-height: 30px;
+}
+
+h1 {
+    font-weight:bold;
+}
+
+.container{
+    margin: 0em 30em;
+    color:black;
+    border: black solid 2px;
+    border-radius: 2em;
+    width: 300px;
+}

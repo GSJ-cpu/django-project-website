@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+{% extends 'test_l.html' %}
+{% load static %}
+
+{% block content %}
+
+<form class="form-inline">
+    <input class="form-control" name="q" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn" type="submit"><img class="icon" src="{% static 'myapp/search-icon.png' %}"></button>
+</form>
+
+{% for data in data %}
+<div class="container">
+    <p class="title">{{ data.title }}</p>
+    <p>{{ data.desc }}</p>
+    <p>Price: ${{ data.price }} | Age reccommendation: {{ data.age_rec }} | Location: {{ data.location }}</p>
+    <p>Date: {{ data.date }} | Subjects: {{ data.subjects }}</p>
+</div>
+
+{% endfor %}
+
+
+{% endblock %}

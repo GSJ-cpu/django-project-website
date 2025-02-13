@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+
+    <style>
+    
+    body{
+        font-family:"Nunito",sans-serif;
+        font-size:20px;
+        line-height:20px;
+        margin:0;
+        background-color:whitesmoke;
+    }
+    
+    .nav {
+        background-color: rgb(60, 145, 230);
+        list-style-type: none;
+        text-align: left;
+        margin: 0;
+        padding: 30px;
+    }
+    
+    .nav li {
+      display: inline-block;
+      color:whitesmoke;
+      font-size:25px;
+      padding-left: 10px;
+    }
+
+    .nav_link{
+        color:whitesmoke;
+    }
+
+    .nav_link:visited{
+        color:whitesmoke;
+        font-style:normal;
+    }
+
+    .nav_link:hover{
+        background-color:whitesmoke;
+        border-radius:5px;
+        padding:5px;
+        color:rgb(111, 173, 236);
+    }
+
+    .icon{
+        text-align:center;
+        display:inline-block;
+        width:30px;
+    }
+
+    .banner{
+        position:relative;
+        text-align:center;
+        color: whitesmoke;
+        font-family:'Times New Roman', Times, serif;
+    }
+
+    .banner-logo{
+        position:absolute;
+        right:30px;
+        bottom:40px;
+        border: solid 6px whitesmoke;
+    }
+
+    .vertical{
+        position:absolute;
+        top: 130px;
+        left:50px;
+        border-left: 6px solid whitesmoke;
+        height: 300px;
+    }
+
+    .left-top{
+        position:absolute;
+        font-size:90px;
+        top:150px;
+        left:90px;
+    }
+
+    .left-middle{
+        position:absolute;
+        font-size:90px;
+        top: 270px;
+        left:90px;
+    }
+
+    .left-bottom{
+        position:absolute;
+        font-size:90px;
+        top: 390px;
+        left:90px;
+    }
+
+    .container{
+        border: solid 5px rgb(60, 145, 230);
+        margin:20px;
+        background-color: rgb(205, 229, 255);
+        padding: 20px;
+    }
+
+    .account-container{
+        border: solid 5px rgb(60, 145, 230);
+        text-align:center;
+        background-color: rgb(205, 229, 255);
+        padding: 20px;
+        width:fit-content;
+        height:fit-content;
+        margin:auto;
+        margin-top:30px;
+    }
+
+    .title{
+        font-size:20px;
+        margin:30px;
+        color: rgb(60, 145, 230);
+        font-weight:bold;}
+
+    .form-inline{
+        text-align:center;
+    }
+
+    .form-control{
+        margin:30px;
+        height:70px;
+        width:500px;
+        font-size:30px;
+    }
+
+    .btn{
+        background-color:rgb(60, 145, 230);
+        border:none;
+        border-radius:5px;
+        color:white;
+        width:fit-content;
+        padding:10px;
+        font-size:20px;
+    }
+
+    .btn:hover{
+        color:rgb(60, 145, 230);
+        background-color:whitesmoke;
+    }
+
+    h3{
+        font-size:40px;
+        font-family: 'Times New Roman', Times, serif;
+        margin:40px 30px;
+        padding:30px;
+        color: whitesmoke;
+        background-color:rgb(60, 145, 230);
+    }
+
+    p{
+        margin-left:30px;
+        margin-right:30px;
+        padding:5px;
+    }
+
+    .showcase{
+        margin: 60px 0;
+        text-align:center;
+    }
+
+    .showcase-img{
+        width:370px; 
+        height:300px; 
+        object-fit:cover; 
+    }
+
+    a{
+        color:rgb(60, 145, 230);
+    }
+
+    .showcase-box{
+        margin:20px;
+        font-weight:bold;
+        border-bottom:solid 3px rgb(107,107,107);
+        text-align:center;
+        display:inline-block; 
+    }
+
+    .special{
+        background-color:rgb(60, 145, 230);
+        width:100%;
+        display:flex;
+        justify-content:center;
+        height:470px;
+        margin-top:20px;
+        color:whitesmoke;
+    }
+
+    .box{
+        border:6px solid white;
+        margin:30px 30px;
+        padding:30px;
+        width: 75%;
+    }
+
+    .page-link{
+        display:inline-block;
+        border-top:3px solid rgb(60, 145, 230);
+        border-bottom:3px solid rgb(60, 145, 230); 
+        color: rgb(60, 145, 230); 
+        padding:10px;
+        margin:10px 50px; 
+        width:500px;
+    }
+
+    .page-link:hover{
+        background-color:rgb(60, 145, 230);
+        color:whitesmoke;
+    }
+
+    h2{
+        margin:90px 50px 30px 50px;
+        color:rgb(60, 145, 230);
+    }
+
+
+    </style>
+    </head>
+{% load static %}
+
+<body>
+    <ul class="nav">
+        <li><a class="nav_link" href="http://127.0.0.1:8000/"><img class="icon" src="{% static 'myapp/home-icon.png' %}"></a></li>
+        <li>|</li>
+        <li><a class="nav_link" href="http://127.0.0.1:8000/search">EXHIBITS</a></li>
+        <li>|</li>
+        <li><a class="nav_link" href="http://127.0.0.1:8000/about">ABOUT</a></li>
+        <li>|</li>
+        {% if user.is_authenticated %}
+            <li><a class="nav_link" href="http://127.0.0.1:8000/account">{{ user.username }}</a></li>
+        {% else%}
+            <li><a class="nav_link" href="{%url 'login'%}">LOGIN</a></li>
+        {% endif %}
+    </ul>
+
+    {% block banner %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+</body>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends "test_l.html" %}
+{% load static %}
+
+{% block content %}
+<h3>Become a member</h3>
+
+<p>Get discounts for exhibitions and receive a free e-newsletter about upcoming events!</p>
+
+<form class="container" method="post" style="line-height:35px;">
+    {% csrf_token %}
+    {{ form }}
+    <button class="btn" type="submit">Sign Up</button>
+</form>
+
+<p>Already a member?</p>
+<a href="http://127.0.0.1:8000/accounts/login"><p class="page-link">Login ></p></a>
+
+{% endblock %}
